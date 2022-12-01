@@ -6,11 +6,13 @@
 
 dividend = int(input("Введите делимое: "))
 divisor = int(input("Введите делитель: "))
-if divisor == 0:
-    print("Делить на ноль нельзя!")
-else:
-    def my_divide(x, y):
+
+
+def my_divide(x, y):
+    try:
         return round(x / y, 2)
+    except ZeroDivisionError:
+        print(f"Нельзя делить на ноль!")
 
 
-    print(f"Результат: {my_divide(dividend, divisor)}")
+print(f"{dividend} / {divisor} = {my_divide(dividend, divisor)}")
